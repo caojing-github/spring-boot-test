@@ -29,42 +29,43 @@ public class BaseSearch<T> implements Specification<T> {
     public static final String IS_NULL = "isnull"; //is null
 
     private SearchDto criteria;
+
     public BaseSearch(SearchDto criteria) {
         this.criteria = criteria;
     }
 
     @Override
     public Predicate toPredicate
-            (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
+        (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
         String opt = criteria.getOperation();
         String key = criteria.getKey();
         String value = criteria.getValue().toString();
         if (opt.equalsIgnoreCase(GRATE_EQUAL)) { //大于等于
             return builder.greaterThanOrEqualTo(
-                    root.<String> get(key), value);
-        } else if(opt.equalsIgnoreCase(GRATE_THEN)) { //大于
-            return builder.greaterThan(root.<String> get(key), value);
-        } else if(opt.equalsIgnoreCase(LESS_EQUAL)) { //小于等于
+                root.<String>get(key), value);
+        } else if (opt.equalsIgnoreCase(GRATE_THEN)) { //大于
+            return builder.greaterThan(root.<String>get(key), value);
+        } else if (opt.equalsIgnoreCase(LESS_EQUAL)) { //小于等于
             return builder.lessThanOrEqualTo(root.<String>get(key), value);
-        } else if(opt.equalsIgnoreCase(LESS_THEN)) { //小于
+        } else if (opt.equalsIgnoreCase(LESS_THEN)) { //小于
             return builder.lessThan(root.<String>get(key), value);
-        } else if(opt.equalsIgnoreCase(LIKE_BEGIN)) { // like '%?'
-            return builder.like(root.<String>get(key), "%"+value);
-        } else if(opt.equalsIgnoreCase(LIKE_END)) { // like '?%'
-            return builder.like(root.<String>get(key), value+"%");
-        } else if(opt.equalsIgnoreCase(LIKE) || opt.equalsIgnoreCase(LIKE_BEGIN_END)) { //like '%?%'
-            return builder.like(root.<String>get(key), "%"+value+"%");
-        } else if(opt.equalsIgnoreCase(NOT_LIKE_BEGIN)) { // not like '%?'
-            return builder.notLike(root.<String>get(key), "%"+value);
-        } else if(opt.equalsIgnoreCase(NOT_LIKE_END)) { // not like '?%'
-            return builder.notLike(root.<String> get(key), value + "%");
-        } else if(opt.equalsIgnoreCase(NOT_LIKE) || opt.equalsIgnoreCase(NOT_LIKE_BEGIN_END)) { //not like '%?%'
-            return builder.notLike(root.<String> get(key), "%"+value+"%");
-        } else if(opt.equalsIgnoreCase(EQUAL)) { //equal
+        } else if (opt.equalsIgnoreCase(LIKE_BEGIN)) { // like '%?'
+            return builder.like(root.<String>get(key), "%" + value);
+        } else if (opt.equalsIgnoreCase(LIKE_END)) { // like '?%'
+            return builder.like(root.<String>get(key), value + "%");
+        } else if (opt.equalsIgnoreCase(LIKE) || opt.equalsIgnoreCase(LIKE_BEGIN_END)) { //like '%?%'
+            return builder.like(root.<String>get(key), "%" + value + "%");
+        } else if (opt.equalsIgnoreCase(NOT_LIKE_BEGIN)) { // not like '%?'
+            return builder.notLike(root.<String>get(key), "%" + value);
+        } else if (opt.equalsIgnoreCase(NOT_LIKE_END)) { // not like '?%'
+            return builder.notLike(root.<String>get(key), value + "%");
+        } else if (opt.equalsIgnoreCase(NOT_LIKE) || opt.equalsIgnoreCase(NOT_LIKE_BEGIN_END)) { //not like '%?%'
+            return builder.notLike(root.<String>get(key), "%" + value + "%");
+        } else if (opt.equalsIgnoreCase(EQUAL)) { //equal
             return builder.equal(root.get(key), value);
-        } else if(opt.equalsIgnoreCase(NOT_EQUAL)) { //not equal
+        } else if (opt.equalsIgnoreCase(NOT_EQUAL)) { //not equal
             return builder.notEqual(root.get(key), value);
-        } else if(opt.equalsIgnoreCase(IS_NULL)) { // is null
+        } else if (opt.equalsIgnoreCase(IS_NULL)) { // is null
             return builder.isNull(root.get(key));
         }
         return null;

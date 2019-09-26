@@ -23,7 +23,7 @@ public class ProTest {
 
     @Test
     public void test() throws Exception {
-        System.out.println("=中文=="+msg);
-        System.out.println("=="+myWebConfig.getTitle());
+        System.out.println("=中文==" + msg);
+        System.out.println("==" + myWebConfig.getTitle());
     }
 }

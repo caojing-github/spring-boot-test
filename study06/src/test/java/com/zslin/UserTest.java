@@ -36,7 +36,7 @@ public class UserTest {
     @Test
     public void testFind() {
         User user = userService.findOne(1);
-        System.out.println("nickName : "+user.getNickName()+", email : "+user.getEmail());
+        System.out.println("nickName : " + user.getNickName() + ", email : " + user.getEmail());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class UserTest {
         User user = userService.findOne(1);
         user.setNickName("钟述林");
         userService.save(user);
-        System.out.println("nickName : "+user.getNickName()+", email : "+user.getEmail());
+        System.out.println("nickName : " + user.getNickName() + ", email : " + user.getEmail());
     }
 
     @Test
@@ -54,12 +54,12 @@ public class UserTest {
 
     @Test
     public void testAddBatch() {
-        for(Integer i=0; i < 5; i++) {
+        for (Integer i = 0; i < 5; i++) {
             User user = new User();
-            user.setNickName("昵称"+i);
-            user.setUserName("user"+i);
-            user.setPassword("pwd"+i);
-            user.setEmail("email"+i+"@domain.com");
+            user.setNickName("昵称" + i);
+            user.setUserName("user" + i);
+            user.setPassword("pwd" + i);
+            user.setEmail("email" + i + "@domain.com");
             userService.save(user);
         }
     }
@@ -67,8 +67,8 @@ public class UserTest {
     @Test
     public void testFindAll() {
         List<User> list = userService.findAll();
-        for(User u : list) {
-            System.out.println("nickName : "+u.getNickName()+", email : "+u.getEmail());
+        for (User u : list) {
+            System.out.println("nickName : " + u.getNickName() + ", email : " + u.getEmail());
         }
     }
 }

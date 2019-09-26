@@ -7,7 +7,9 @@ import org.springframework.data.jpa.domain.Specifications;
  */
 public class SearchSpeDto {
 
-    /** 类型，and或者or */
+    /**
+     * 类型，and或者or
+     */
     private String type;
 
     public SearchSpeDto(String type, Specifications spes) {

@@ -28,16 +28,17 @@ public class WebDto {
         this.readCount = readCount;
     }
 
-    public WebDto() {}
+    public WebDto() {
+    }
 
     @Override
     public String toString() {
         return "WebDto{" +
-                "name='" + name + '\'' +
-                ", url='" + url + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", readCount=" + readCount +
-                '}';
+            "name='" + name + '\'' +
+            ", url='" + url + '\'' +
+            ", username='" + username + '\'' +
+            ", password='" + password + '\'' +
+            ", readCount=" + readCount +
+            '}';
     }
 }

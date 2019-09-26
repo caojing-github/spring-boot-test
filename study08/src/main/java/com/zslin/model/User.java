@@ -3,7 +3,6 @@ package com.zslin.model;
 import javax.persistence.*;
 
 /**
- *
  * Created by 钟述林 393156105@qq.com on 2016/10/21 10:55.
  */
 @Entity

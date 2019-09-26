@@ -29,7 +29,7 @@ public class UserSortTest {
     public void testSort() {
         Sort sort = new Sort(Sort.Direction.ASC, "id");
         List<User> list = userService.findAll(sort);
-        for(User u : list) {
+        for (User u : list) {
             System.out.println(u.getUserName());
         }
     }
@@ -37,7 +37,7 @@ public class UserSortTest {
     @Test
     public void testSort2() {
         List<User> list = userService.findAll(SortTools.basicSort());
-        for(User u : list) {
+        for (User u : list) {
             System.out.println(u.getUserName());
         }
     }
@@ -45,16 +45,16 @@ public class UserSortTest {
     @Test
     public void testSort3() {
         List<User> list = userService.findAll(SortTools.basicSort("desc", "userName"));
-        for(User u : list) {
-            System.out.println(u.getId()+"===="+u.getUserName());
+        for (User u : list) {
+            System.out.println(u.getId() + "====" + u.getUserName());
         }
     }
 
     @Test
     public void testSort4() {
         List<User> list = userService.findAll(SortTools.basicSort(new SortDto("desc", "userName"), new SortDto("id")));
-        for(User u : list) {
-            System.out.println(u.getId()+"===="+u.getUserName());
+        for (User u : list) {
+            System.out.println(u.getId() + "====" + u.getUserName());
         }
     }
 }

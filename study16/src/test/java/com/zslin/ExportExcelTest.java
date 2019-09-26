@@ -27,11 +27,11 @@ public class ExportExcelTest {
 
         Map<String, String> map = new HashMap<String, String>();
         map.put("title", "网站信息表");
-        map.put("total", list.size()+" 条");
+        map.put("total", list.size() + " 条");
         map.put("date", getDate());
 
         ExcelUtil.getInstance().exportObj2ExcelByTemplate(map, "web-info-template.xls", new FileOutputStream("D:/temp/out.xls"),
-                list, WebDto.class, true);
+            list, WebDto.class, true);
     }
 
     private String getDate() {

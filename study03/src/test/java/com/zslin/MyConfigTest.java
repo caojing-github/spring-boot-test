@@ -19,7 +19,7 @@ public class MyConfigTest {
 
     @Test
     public void testConfig() {
-        System.out.println("webName: "+myConfig.getName()+
-                ", webVersion: "+ myConfig.getVersion()+", webAuthor: "+myConfig.getAuthor());
+        System.out.println("webName: " + myConfig.getName() +
+            ", webVersion: " + myConfig.getVersion() + ", webAuthor: " + myConfig.getAuthor());
     }
 }

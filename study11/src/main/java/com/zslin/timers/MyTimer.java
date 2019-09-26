@@ -23,12 +23,12 @@ public class MyTimer {
     //第一次延迟1秒执行，当执行完后3秒再执行
     @Scheduled(initialDelay = 1000, fixedDelay = 3000)
     public void timerInit() {
-        System.out.println("init : "+sdf.format(new Date()));
+        System.out.println("init : " + sdf.format(new Date()));
     }
 
     //每天23点27分50秒时执行
     @Scheduled(cron = "50 27 23 * * ?")
     public void timerCron() {
-        System.out.println("current time : "+ sdf.format(new Date()));
+        System.out.println("current time : " + sdf.format(new Date()));
     }
 }

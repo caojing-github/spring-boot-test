@@ -20,12 +20,12 @@ public class UserInitTest {
 
     @Test
     public void initTest() {
-        for(int i=1; i<=10; i++) {
+        for (int i = 1; i <= 10; i++) {
             User u = new User();
-            u.setEmail("email"+i+"@domain.com");
-            u.setPassword("pwd"+i);
-            u.setUserName("user"+i);
-            u.setNickName("nickname"+i);
+            u.setEmail("email" + i + "@domain.com");
+            u.setPassword("pwd" + i);
+            u.setUserName("user" + i);
+            u.setNickName("nickname" + i);
             userService.save(u);
         }
     }

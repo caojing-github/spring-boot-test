@@ -24,23 +24,23 @@ public class SearchTest {
     private IUserService userService;
 
     private void print(List<User> list) {
-        for(User u : list) {
-            System.out.println(u.getId()+"==="+u.getUserName());
+        for (User u : list) {
+            System.out.println(u.getId() + "===" + u.getUserName());
         }
     }
 
     @Test
     public void test1() {
-        List<User> list = userService.findAll(new BaseSearch<User>(new SearchDto("userName","eq", "user1")));
+        List<User> list = userService.findAll(new BaseSearch<User>(new SearchDto("userName", "eq", "user1")));
         print(list);
     }
 
     @Test
     public void test2() {
         List<User> list = userService.findAll(SearchTools.buildSpecification(
-                SearchTools.buildSpeDto("and", new SearchDto("and", "id", "gt", 2)),
-                SearchTools.buildSpeDto("and", new SearchDto("userName", "ne", "user5"),
-                        new SearchDto("or", "userName", "ne", "user9"))
+            SearchTools.buildSpeDto("and", new SearchDto("and", "id", "gt", 2)),
+            SearchTools.buildSpeDto("and", new SearchDto("userName", "ne", "user5"),
+                new SearchDto("or", "userName", "ne", "user9"))
         ));
         print(list);
     }

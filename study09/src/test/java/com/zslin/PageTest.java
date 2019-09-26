@@ -25,20 +25,20 @@ public class PageTest {
 
     @Test
     public void test1() {
-        Pageable pageable =new PageRequest(0, 5);
+        Pageable pageable = new PageRequest(0, 5);
         Page<User> datas = userService.findAll(pageable);
-        System.out.println("总条数："+datas.getTotalElements());
-        System.out.println("总页数："+datas.getTotalPages());
-        for(User u : datas) {
-            System.out.println(u.getId()+"===="+u.getUserName());
+        System.out.println("总条数：" + datas.getTotalElements());
+        System.out.println("总页数：" + datas.getTotalPages());
+        for (User u : datas) {
+            System.out.println(u.getId() + "====" + u.getUserName());
         }
     }
 
     private void print(Page<User> datas) {
-        System.out.println("总条数："+datas.getTotalElements());
-        System.out.println("总页数："+datas.getTotalPages());
-        for(User u : datas) {
-            System.out.println(u.getId()+"===="+u.getUserName());
+        System.out.println("总条数：" + datas.getTotalElements());
+        System.out.println("总页数：" + datas.getTotalPages());
+        for (User u : datas) {
+            System.out.println(u.getId() + "====" + u.getUserName());
         }
     }
 

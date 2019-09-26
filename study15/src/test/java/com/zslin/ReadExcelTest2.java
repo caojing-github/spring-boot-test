@@ -38,7 +38,7 @@ public class ReadExcelTest2 {
 
         String title = titleCell.getStringCellValue();
 
-        System.out.println("标题是："+title);
+        System.out.println("标题是：" + title);
     }
 
     //读取到列表
@@ -50,7 +50,7 @@ public class ReadExcelTest2 {
 
         HSSFSheet sheet = book.getSheetAt(0);
 
-        for(int i=2; i<sheet.getLastRowNum()+1; i++) {
+        for (int i = 2; i < sheet.getLastRowNum() + 1; i++) {
             HSSFRow row = sheet.getRow(i);
             String name = row.getCell(0).getStringCellValue(); //名称
             String url = row.getCell(1).getStringCellValue(); //url
@@ -62,7 +62,7 @@ public class ReadExcelTest2 {
         }
 
         System.out.println("共有 " + list.size() + " 条数据：");
-        for(WebDto wd : list) {
+        for (WebDto wd : list) {
             System.out.println(wd);
         }
     }

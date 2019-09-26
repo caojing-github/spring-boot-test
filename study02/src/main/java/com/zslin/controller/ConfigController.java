@@ -18,8 +18,8 @@ public class ConfigController {
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index() {
-        return "webName: "+myWebConfig.getName()+", webVersion: "+
-                myWebConfig.getVersion()+", webAuthor: "+myWebConfig.getAuthor()+
-                ", title: "+myWebConfig.getTitle();
+        return "webName: " + myWebConfig.getName() + ", webVersion: " +
+            myWebConfig.getVersion() + ", webAuthor: " + myWebConfig.getAuthor() +
+            ", title: " + myWebConfig.getTitle();
     }
 }

@@ -12,7 +12,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.mail.MessagingException;
-import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -52,8 +51,8 @@ public class MyqqMailTest {
 
             StringBuffer sb = new StringBuffer();
             sb.append("<h1>大标题-h1</h1>")
-              .append("<p style='color:#F00'>红色字</p>")
-              .append("<p style='text-align:right'>右对齐</p>");
+                .append("<p style='color:#F00'>红色字</p>")
+                .append("<p style='text-align:right'>右对齐</p>");
             helper.setText(sb.toString(), true);
         } catch (MessagingException e) {
             e.printStackTrace();
@@ -74,8 +73,8 @@ public class MyqqMailTest {
 
             StringBuffer sb = new StringBuffer();
             sb.append("<h1>大标题-h1</h1>")
-                    .append("<p style='color:#F00'>红色字</p>")
-                    .append("<p style='text-align:right'>右对齐</p>");
+                .append("<p style='color:#F00'>红色字</p>")
+                .append("<p style='text-align:right'>右对齐</p>");
             helper.setText(sb.toString(), true);
         } catch (Exception e) {
             e.printStackTrace();

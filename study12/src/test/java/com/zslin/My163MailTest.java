@@ -50,8 +50,8 @@ public class My163MailTest {
 
             StringBuffer sb = new StringBuffer();
             sb.append("<h1>大标题-h1</h1>")
-              .append("<p style='color:#F00'>红色字</p>")
-              .append("<p style='text-align:right'>右对齐</p>");
+                .append("<p style='color:#F00'>红色字</p>")
+                .append("<p style='text-align:right'>右对齐</p>");
             helper.setText(sb.toString());
         } catch (MessagingException e) {
             e.printStackTrace();

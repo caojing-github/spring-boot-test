@@ -22,12 +22,12 @@ public class UserTest {
 
     @Test
     public void testAdd() {
-        for(Integer i=0; i < 5; i++) {
+        for (Integer i = 0; i < 5; i++) {
             User user = new User();
-            user.setNickName("昵称"+i);
-            user.setUserName("user"+i);
-            user.setPassword("pwd"+i);
-            user.setEmail("email"+i+"@domain.com");
+            user.setNickName("昵称" + i);
+            user.setUserName("user" + i);
+            user.setPassword("pwd" + i);
+            user.setEmail("email" + i + "@domain.com");
             userService.save(user);
         }
     }
@@ -35,19 +35,19 @@ public class UserTest {
     @Test
     public void testFindById() {
         User u = userService.findById(3);
-        System.out.println("nickName : "+u.getNickName()+", email : "+u.getEmail());
+        System.out.println("nickName : " + u.getNickName() + ", email : " + u.getEmail());
     }
 
     @Test
     public void testFindByUserName() {
         User u = userService.findByUserName("user3");
-        System.out.println("nickName : "+u.getNickName()+", email : "+u.getEmail());
+        System.out.println("nickName : " + u.getNickName() + ", email : " + u.getEmail());
     }
 
     @Test
     public void testFindByNameAndPwd() {
         User u = userService.findByUserNameAndPassword("user4", "pwd4");
-        System.out.println("nickName : "+u.getNickName()+", email : "+u.getEmail());
+        System.out.println("nickName : " + u.getNickName() + ", email : " + u.getEmail());
     }
 
     @Test

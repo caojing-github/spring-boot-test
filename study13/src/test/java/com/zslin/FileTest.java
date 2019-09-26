@@ -19,18 +19,20 @@ public class FileTest {
     @Value("${web.upload-path}")
     private String path;
 
-    /** 文件上传测试 */
+    /**
+     * 文件上传测试
+     */
     @Test
     public void uploadTest() throws Exception {
         File f = new File("D:/pic.jpg");
-        FileCopyUtils.copy(f, new File(path+"/1.jpg"));
+        FileCopyUtils.copy(f, new File(path + "/1.jpg"));
     }
 
     @Test
     public void listFilesTest() {
         File file = new File(path);
-        for(File f : file.listFiles()) {
-            System.out.println("fileName : "+f.getName());
+        for (File f : file.listFiles()) {
+            System.out.println("fileName : " + f.getName());
         }
     }
 }

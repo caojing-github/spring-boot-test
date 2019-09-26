@@ -5,7 +5,9 @@ package com.zslin.tools;
  */
 public class SearchDto {
 
-    /** 拼接类型，and或者or */
+    /**
+     * 拼接类型，and或者or
+     */
     private String type;
     private String key;
     private String operation;

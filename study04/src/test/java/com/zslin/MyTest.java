@@ -18,6 +18,6 @@ public class MyTest {
 
     @Test
     public void testConfig() {
-        System.out.println("cur msg is : "+ msg);
+        System.out.println("cur msg is : " + msg);
     }
 }
